@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { ThemeProvider } from "styled-components";
 
-import BuyIcon from "../assets/buyIcon.svg";
-import Button from "./button";
-import device from "./styles/device";
+import BuyIcon from "../../assets/buyIcon.svg";
+import Button from "../button";
+import device from "../styles/device";
 
 
 const ImageSlide = styled.img`

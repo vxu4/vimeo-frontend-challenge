@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import './App.css';
 import Thumbnail from './components/thumbnail';
-import Carousel from './components/carousel';
+import Carousel from './components/carousel/carousel';
 import staticThumbnails from './assets/staticThumbnails.js';
 import carouselThumbnails from "./assets/carouselThumbnails";
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
 
-import device from "./styles/device";
-import colors from "./styles/palette";
+import device from "../styles/device";
+import colors from "../styles/palette";
 
 const ArrowIcon = styled.div`
     padding: 0px 50px;
