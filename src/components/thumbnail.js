@@ -8,7 +8,7 @@ const ThumbnailWrapper = styled.div`
   align-content: center;
   justify-items: center;
   align-items: center;
-  justidy-content: center;
+
 
   @media ${device.mobileS} {
     grid-template-columns: 30px auto 30px;
@@ -55,9 +55,7 @@ const Right = styled.div`
 `;
 
 const ImgThumbnail = styled.img`
-    @media ${device.mobileS} {
-        max-width: 100%;
-    }
+    max-width: 100%;
 `;
 
 function renderOrder(props) {

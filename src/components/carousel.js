@@ -1,37 +1,8 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
 
-import device from "./styles/device";
-import Slide from "./slide"
-import colors from "./styles/palette";
-import carouselThumbnails from "../assets/carouselThumbnails";
-
-const Arrow = styled.div`
-    padding: 0px 50px;
-    color: ${colors.white1Transparent};
-    font-size: 70px;
-    font-family: Georgia, sans serif;
-    z-index: 9999;
-    position: absolute;
-
-    :hover {
-        cursor: pointer;
-        color: ${colors.blue1};
-    }
-
-    @media ${device.mobileS} {
-        top: 400px;
-        left: ${props => props.right ? "80vw" : "1vw"}; 
-    }
-
-    @media ${device.tablet} {
-        left: ${props => props.right ? "80vw" : "10vw"}; 
-    }
-
-    @media ${device.laptop} {
-        top: 150px;
-    }
-`;
+import Slide from "./slide";
+import Arrow from "./arrow";
 
 const CarouselContainer = styled.div`
     display: flex;
@@ -57,7 +28,7 @@ const CarouselSlot = styled.div`
 class Carousel extends Component {
     constructor (props) {
         super(props);
-
+        this.carouselThumbnails = props.slides;
         this.state = {
             currIndex: 0,
             slideDirection: 'next',
@@ -83,19 +54,19 @@ class Carousel extends Component {
 
     prevSlide() {
         const curr = this.state.currIndex;
-        const numItems = carouselThumbnails.length || 1;
+        const numItems = this.carouselThumbnails.length || 1;
         this.doSliding(curr === 0 ? numItems - 1 : curr - 1, 'prev')
     }
 
     nextSlide () {
         const curr = this.state.currIndex
-        const numItems = carouselThumbnails.length || 1;
+        const numItems = this.carouselThumbnails.length || 1;
         this.doSliding(curr === numItems - 1 ? 0 : curr + 1, 'next')
     }
 
     getOrder(itemIndex) {
         const curr = this.state.currIndex
-        const numItems = carouselThumbnails.length || 1
+        const numItems = this.carouselThumbnails.length || 1
         if (itemIndex - curr < 0) {
           return numItems - Math.abs(itemIndex - curr)
         }
@@ -105,17 +76,11 @@ class Carousel extends Component {
     render () {
         return (
             <CarouselWrapper>
-                <Arrow right
-                    onClick={ this.nextSlide }>
-                    &#62;
-                </Arrow>
-                <Arrow 
-                    onClick={ this.prevSlide }>
-                    &#60;
-                </Arrow>
+                <Arrow right onClick={ this.nextSlide } />
+                <Arrow onClick={ this.prevSlide } />
                 <CarouselContainer sliding={this.state.sliding} direction={this.state.slideDirection}>
                 {
-                    carouselThumbnails.map((thumbnailInfo, index) =>
+                    this.carouselThumbnails.map((thumbnailInfo, index) =>
                         <CarouselSlot id={index} order={ this.getOrder(index) }>
                             <Slide thumbnail={thumbnailInfo}/>
                         </CarouselSlot>

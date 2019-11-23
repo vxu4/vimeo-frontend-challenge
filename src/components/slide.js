@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { ThemeProvider } from "styled-components";
 
-import colors from "./styles/palette";
 import BuyIcon from "../assets/buyIcon.svg";
 import Button from "./button";
 import device from "./styles/device";
@@ -63,7 +62,7 @@ const InfoThumbnail = styled.div`
 `;
 
 const Title = styled.h1 `
-    color: ${colors.white1};
+    color: ${props => props.theme.title};
     padding: 0px;
     font-weight: 500;
 `;
@@ -71,7 +70,7 @@ const Title = styled.h1 `
 const TextThumbnail = styled.p`
     margin: 25px 0px;
     padding: 0px;
-    color: ${colors.white1Transparent};
+    color: ${props => props.theme.text};
 `;
 
 const ImgThumbnail = styled.img`

@@ -8,7 +8,7 @@ const ButtonContainer = styled.button`
     border-radius: 5px;
     margin-right: 10px;
     color: ${colors.white1};
-    background-color: ${props => props.theme.main};
+    background-color: ${props => props.theme.button};
     border: none;
     font-size: 17px;
     font-weight: bold;
