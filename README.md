@@ -1,6 +1,6 @@
 # Vimeo Front-end Coding Challenge
 
-Used React to create a one-page static webpage with an animated (swipe) carousel at the top and 3 different movie thumbnails below it. Media queries were utilized to make the page and its components and layout reponsive to different screen sizes. 
+Used React to create a static webpage with an animated (sliding) carousel at the top and 3 different movie thumbnails below it. Media queries were utilized to make the page and its components reponsive to different screen sizes. 
 
 ## Getting Started
 
