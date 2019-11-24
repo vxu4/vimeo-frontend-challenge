@@ -13,11 +13,11 @@ node -v
 ```
 If either one is not installed, you can download it here: https://nodejs.org/en/.
 
-Then, download or clone this repository to your local machine. 
-
 ### Running the Application
 
-To run the application, navigate into the folder repo, install the project's dependancies, and then start the application.
+Then, download or clone this repository to your local machine. 
+
+Navigate into the folder repo, install the project's dependancies, and then start the application.
 
 Installing packages:
 ```
