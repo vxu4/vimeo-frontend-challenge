@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { ThemeProvider } from "styled-components";
 
-import BuyIcon from "../../assets/buyIcon.svg";
-import Button from "../button";
+import InfoThumbnail from "./infoThumbnail";
+import ImgThumbnail from "./imgThumbnail";
 import device from "../styles/device";
 
 
@@ -44,63 +44,12 @@ const OverLay = styled.div`
     }
 `;
 
-const InfoThumbnail = styled.div`
-    @media ${device.mobileS} {
-        grid-row: 1 / 2;
-        grid-column: 2 / 3;
-        margin-top: 0px;
-        align-self: flex-end;
-        margin-bottom: 0px;
-    }
-
-    @media ${device.laptop} {
-        margin-top: 80px;
-        align-self: flex-start;
-        grid-column: 3 / 4;
-        grid-row: 1 / 2;
-    }
-`;
-
-const Title = styled.h1 `
-    color: ${props => props.theme.title};
-    padding: 0px;
-    font-weight: 500;
-`;
-
-const TextThumbnail = styled.p`
-    margin: 25px 0px;
-    padding: 0px;
-    color: ${props => props.theme.text};
-`;
-
-const ImgThumbnail = styled.img`
-    width: 250px;
-    margin: 50px;
-    height: auto;
-    @media ${device.mobileS} {
-        justify-self: center;
-        align-self: flex-start;
-        grid-row: 2 / 3;
-        grid-column: 2 / 3;
-    }
-
-    @media ${device.laptop} {
-        grid-row: 1 / 2;
-        justify-self: flex-end;
-    }
-`;
-
 export const Slide = ({ ...props }) => (
     <ThemeProvider theme={props.thumbnail.theme}>
         <ImageSlide src={props.thumbnail.imgUrl}/>
         <OverLay>
             <ImgThumbnail src={props.thumbnail.imgUrl}></ImgThumbnail>
-            <InfoThumbnail>
-                <Title>{props.thumbnail.title}</Title>
-                <TextThumbnail>{props.thumbnail.description}</TextThumbnail>
-                <Button text={"Buy Now"} src={BuyIcon} theme={props.thumbnail.theme}/>
-                <Button inverse text={"Watch Trailer"} theme={props.thumbnail.theme}/>
-            </InfoThumbnail>
+            <InfoThumbnail thumbnail={props.thumbnail}></InfoThumbnail>
         </OverLay>
     </ThemeProvider>
 )

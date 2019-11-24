@@ -22,7 +22,8 @@ class App extends Component {
             let thumbStyle;
             if (thumbnailInfo.gradient){
               thumbStyle = {
-                backgroundImage: "linear-gradient(" + thumbnailInfo.theme.main +", " + thumbnailInfo.theme.gradientTo,
+                backgroundImage: 
+                  "linear-gradient(" + thumbnailInfo.theme.main + ", " + thumbnailInfo.theme.gradientTo,
                 color: thumbnailInfo.theme.text,
                 paddingTop: "0px",
               };
@@ -32,7 +33,8 @@ class App extends Component {
                 color: thumbnailInfo.theme.text,
               };
             }
-            return (<Thumbnail style={thumbStyle}
+            return (
+            <Thumbnail style={thumbStyle}
               imgSrc={thumbnailInfo.imageSrc}
               title={thumbnailInfo.title} 
               text={thumbnailInfo.text}

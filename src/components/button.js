@@ -14,7 +14,6 @@ const ButtonContainer = styled.button`
     font-weight: bold;
     >img, >span {
         vertical-align: middle;
-
     }
     :hover {
         cursor: pointer;

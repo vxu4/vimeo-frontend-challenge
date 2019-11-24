@@ -19,11 +19,11 @@ const ArrowIcon = styled.div`
 
     @media ${device.mobileS} {
         top: 400px;
-        left: ${props => props.right ? "80vw" : "1vw"}; 
+        left: ${props => props.right ? "80%" : "1%"}; 
     }
 
     @media ${device.tablet} {
-        left: ${props => props.right ? "80vw" : "10vw"}; 
+        left: ${props => props.right ? "82%" : "8%"}; 
     }
 
     @media ${device.laptop} {
